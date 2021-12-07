@@ -1,0 +1,205 @@
+<div class="card">
+    <div class="card-header bg-dark text-light">Level 1</div>
+    <div class="card-body">
+        <p>Using the SportsORM, complete all the following queries and show their results on Level1.cshtml.</p>
+        <ol>
+            <li>...all womens' leagues</li>
+            <li>...all leagues where sport is any type of hockey</li>
+            <li>...all leagues where sport is something OTHER THAN football</li>
+            <li>...all leagues that call themselves "conferences"</li>
+            <li>...all leagues in the Atlantic region</li>
+            <li>...all teams based in Dallas</li>
+            <li>...all teams named the Raptors</li>
+            <li>...all teams whose location includes "City"</li>
+            <li>...all teams whose names begin with "T"</li>
+            <li>...all teams, ordered alphabetically by location</li>
+            <li>...all teams, ordered by team name in reverse alphabetical order</li>
+            <li>...every player with last name "Cooper"</li>
+            <li>...every player with first name "Joshua"</li>
+            <li>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</li>
+            <li>...all players with first name "Alexander" OR first name "Wyatt"</li>
+        </ol>
+    </div>
+            <ol>
+                <h3>All Womens' Leagues</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>League Name</th>
+                @{
+                    foreach(League l in ViewBag.one)
+                    {
+                        <tr>
+                            <td>@l.Name</td>
+                        </tr>
+                    }
+                }
+            </table>
+            <h3>All Hockey Leagues</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>League Name</th>
+            @{
+                foreach(League l in ViewBag.two)
+                {
+                    <tr>
+                        <td>@l.Name</td>
+                    </tr>
+                }
+            }
+            </table>
+            <h3>All Leagues Except Football</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>League Name</th>
+                @{
+                    foreach(League l in ViewBag.three)
+                    {
+                        <tr>
+                            <td>@l.Name</td>
+                        </tr>
+                    }
+                }
+            </table>
+            <h3>All League Conferences</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>League Name</th>
+                    @{
+                        foreach(League l in ViewBag.four)
+                        {
+                            <tr>
+                                <td>@l.Name</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Atlantic League Conferences</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>League Name</th>
+                    @{
+                        foreach(League l in ViewBag.five)
+                        {
+                            <tr>
+                                <td>@l.Name</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Teams in Dallas</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Team l in ViewBag.six)
+                        {
+                            <tr>
+                                <td>@l.TeamName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Teams Named Raptor</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Team l in ViewBag.seven)
+                        {
+                            <tr>
+                                <td>@l.TeamName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Teams Named City</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Team l in ViewBag.eight)
+                        {
+                            <tr>
+                                <td>@l.TeamName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Teams Start with T</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Team l in ViewBag.nine)
+                        {
+                            <tr>
+                                <td>@l.TeamName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Teams Sorted by Ascending</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Team l in ViewBag.ten)
+                        {
+                            <tr>
+                                <td>@l.Location</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Teams Sorted by Descending</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Team l in ViewBag.eleven)
+                        {
+                            <tr>
+                                <td>@l.Location</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Every Player Last Name Cooper</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Player l in ViewBag.twelve)
+                        {
+                            <tr>
+                                <td>@l.LastName, @l.FirstName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Every Player First Name Joshua</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Player l in ViewBag.thirteen)
+                        {
+                            <tr>
+                                <td>@l.LastName, @l.FirstName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Every Player Last Name Cooper and No First Name Joshua</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Player l in ViewBag.fourteen)
+                        {
+                            <tr>
+                                <td>@l.LastName, @l.FirstName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+            <h3>Every Player First Name Alexander or Wyatt</h3>
+            <table class="table table-striped border border-dark w-50">
+                <th>Team Name</th>
+                    @{
+                        foreach(Player l in ViewBag.fourteen)
+                        {
+                            <tr>
+                                <td>@l.LastName, @l.FirstName</td>
+                            </tr>
+                        }
+                    }
+            </table>
+        </ol>
+</div>
